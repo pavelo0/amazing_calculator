@@ -121,7 +121,7 @@ body {
 .input {
     color: #FFA843;
 }
-.button-field {
+.buttons {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(4, 1fr);

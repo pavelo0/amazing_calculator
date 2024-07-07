@@ -27,9 +27,7 @@
             <div class="container">
                 <div class="calculator-background">
                     <div class="input-field">
-                        <div class="input">
-                            0
-                        </div>
+                        <input class="input"/>
                     </div>
                     <div class="decorations">
                         <div class="author-plate">
@@ -37,57 +35,57 @@
                                 Powerd by Pavelo_0
                             </h3>
                         </div>
-                        <button class="ac-button" value="AC" onclick="getValue(this)">
+                        <button class="ac-button" value="AC">
                             AC
                         </button>
                     </div>
-                    <div class="button-field">
-                        <button class="button" value="7" onclick="getValue(this)">
+                    <div class="buttons">
+                        <button class="button" data-button-type="operand" value="7">
                             7
                         </button>
-                        <button class="button" value="8" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="8">
                             8
                         </button>
-                        <button class="button" value="9" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="9">
                             9
                         </button>
-                        <button class="button operation-button" value="÷" onclick="getValue(this)">
+                        <button class="button operation-button" data-button-type="operator" value="÷">
                             ÷
                         </button>
-                        <button class="button" value="4" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="4">
                             4
                         </button>
-                        <button class="button" value="5" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="5">
                             5
                         </button>
-                        <button class="button" value="6" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="6">
                             6
                         </button>
-                        <button class="button operation-button" value="×" onclick="getValue(this)">
+                        <button class="button operation-button" data-button-type="operator" value="×">
                             ×
                         </button>
-                        <button class="button" value="1" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="1">
                             1
                         </button>
-                        <button class="button" value="2" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="2">
                             2
                         </button>
-                        <button class="button" value="3" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="3">
                             3
                         </button>
-                        <button class="button operation-button" value="+" onclick="getValue(this)">
+                        <button class="button operation-button" data-button-type="operator" value="+">
                             +
                         </button>
-                        <button class="button" value="0" onclick="getValue(this)">
+                        <button class="button" data-button-type="operand" value="0">
                             0
                         </button>
-                        <button class="button" value="." onclick="getValue(this)">
+                        <button class="button" value=".">
                             .
                         </button>
-                        <button class="button operation-button" value="-" onclick="getValue(this)">
+                        <button class="button operation-button" data-button-type="operator" value="-">
                             -
                         </button>
-                        <button class="button equal-button" value="=" onclick="getValue(this)">
+                        <button class="button equal-button" data-button-type="equal" value="=">
                             =
                         </button>
                     </div>
