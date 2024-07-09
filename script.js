@@ -2,6 +2,8 @@ const BUTTON_TYPES = {
     OPERATOR: 'operator',
     OPERAND: 'operand',
     EQUAL: 'equal',
+    CLEAR_ALL: 'clear_all',
+    DECIMAL_SEPARATOR: 'decimal_separator',
 };
 const OPERATION_TYPES = {
     SUM: 'sum',
@@ -13,6 +15,7 @@ const calculatorState = {
     displayValue: '0', 
     firstOperand: null,
     operatorType: null,
+    diciminal_separator: null,
     result: 0,
 };
 function setOperand() {
@@ -40,9 +43,9 @@ function makeOperation(operatorType, firstOperand, secondOperand) {
     }
 }
 
-
 function main() {
     const display = document.querySelector('.input');
+    const ACButton = document.querySelector('.decorations')
     const buttons = document.querySelector('.buttons');
     buttons.addEventListener('click', function(event) {
         const buttonType = event.target.dataset.buttonType;
@@ -54,10 +57,9 @@ function main() {
             }
             showDisplayValue(calculatorState.displayValue, display);
         } else if(buttonType === BUTTON_TYPES.OPERATOR) {
-            
+            calculatorState.diciminal_separator = null;
             if(calculatorState.operatorType !== null) {
                 calculatorState.result = makeOperation(calculatorState.operatorType, calculatorState.firstOperand, Number(calculatorState.displayValue));
-                // calculatorState.displayValue = calculatorState.result;
                 calculatorState.firstOperand = calculatorState.result;
             } else {
                 calculatorState.firstOperand = Number(calculatorState.displayValue);
@@ -66,9 +68,31 @@ function main() {
             calculatorState.displayValue = '0';
             showDisplayValue(calculatorState.result, display);
             console.log(calculatorState);
+        } else if(buttonType === BUTTON_TYPES.EQUAL) {
+            calculatorState.result = makeOperation(calculatorState.operatorType, calculatorState.firstOperand, Number(calculatorState.displayValue));
+            showDisplayValue(calculatorState.result, display);
+            console.log(calculatorState);
+        } else if(buttonType === BUTTON_TYPES.DECIMAL_SEPARATOR) {
+            if(calculatorState.diciminal_separator === null) {
+                calculatorState.diciminal_separator = '.';
+                console.log(calculatorState);
+                calculatorState.displayValue += '.';
+                showDisplayValue(calculatorState.displayValue, display);
+            }
         }
-    })
-
+    });
+    ACButton.addEventListener('click', function(event) {
+        const ACbuttonType = event.target.dataset.buttonType;
+        if(ACbuttonType === BUTTON_TYPES.CLEAR_ALL) {
+            calculatorState.displayValue = '0';
+            calculatorState.firstOperand = null;
+            calculatorState.operatorType = null;
+            calculatorState.diciminal_separator = null;
+            calculatorState.result = 0;
+            showDisplayValue(calculatorState.displayValue, display);
+        }
+    }) 
+//You can't divide by zero
     window.onload = function() {
         showDisplayValue(calculatorState.displayValue, display);
     }

@@ -27,15 +27,15 @@
             <div class="container">
                 <div class="calculator-background">
                     <div class="input-field">
-                        <input class="input"/>
+                        <input class="input" readonly/>
                     </div>
                     <div class="decorations">
                         <div class="author-plate">
                             <h3 class="author-plate-text">
-                                Powerd by Pavelo_0
+                                Powered by Pavelo_0
                             </h3>
                         </div>
-                        <button class="ac-button" value="AC">
+                        <button class="ac-button" data-button-type="clear_all" value="AC">
                             AC
                         </button>
                     </div>
@@ -79,7 +79,7 @@
                         <button class="button" data-button-type="operand" value="0">
                             0
                         </button>
-                        <button class="button" value=".">
+                        <button class="button" data-button-type="decimal_separator" value=".">
                             .
                         </button>
                         <button class="button operation-button" data-button-type="operator" value="dif">
@@ -94,7 +94,26 @@
         </section>
     </main>
     <footer class="footer">
-
+        <div class="footer-inner">
+            <h1 class="logo-in-footer">
+                Simple_calculator :]
+            </h1>
+            <ul class="footer-menu">
+                <li class="footer-menu-item"><a href="" class="footer-menu-item-link">Main</a></li>
+                <li class="footer-menu-item"><a href="" class="footer-menu-item-link">Me</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="" class="social-link-item">
+                    <img src="src/github.svg" alt="github-icon" class="social-photo">
+                </a>
+                <a href="" class="social-link-item">
+                    <img src="src/telegram.svg" alt="telegram-icon" class="social-photo">
+                </a>
+                <a href="" class="social-link-item">
+                    <img src="src/inst.svg" alt="instagram-icon" class="social-photo">
+                </a>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
